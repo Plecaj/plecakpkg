@@ -16,7 +16,7 @@ pub struct InitCommand{
 )]
 pub struct InstallCommand{
     #[arg(short, long, help = "The GitHub repository name of the dependency")]
-    pub name: String,
+    pub url: String,
     #[arg(short, long, help = "Optional version of the dependency to install")]
     pub version: Option<String>,
 }

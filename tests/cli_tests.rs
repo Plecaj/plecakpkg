@@ -13,7 +13,7 @@
     #[test]
     fn test_handle_install_with_version() {
         let install_args = InstallCommand {
-            name: "TestPackage".to_string(),
+            url: "https://github.com/fmtlib/fmt".to_string(),
             version: Some("1.2.3".to_string()),
         };
 
@@ -24,7 +24,7 @@
     #[test]
     fn test_handle_install_without_version() {
         let install_args = InstallCommand {
-            name: "TestPackage".to_string(),
+            url: "https://github.com/fmtlib/fmt".to_string(),
             version: None,
         };
 
