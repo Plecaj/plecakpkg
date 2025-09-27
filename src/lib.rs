@@ -1,9 +1,9 @@
-pub mod database;
+pub mod package;
 pub mod commands;
 pub mod cli;
-pub mod commands_functionality;
 
-pub use database::{Database, BuildSystem};
-pub use commands::{Commands, InitCommand, InstallCommand};
-pub use commands_functionality::{handle_init, handle_install};
+pub use commands::*;
+pub use GitFetcher;
+
+pub use package::{BuildSystem, Package};
 pub use cli::Cli;

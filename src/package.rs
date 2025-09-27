@@ -4,14 +4,14 @@ pub enum BuildSystem {
     Cmake,
 }
 #[derive(Serialize, Deserialize)]
-pub struct Database{
+pub struct Package {
     name: String,
     build_system: BuildSystem,
     dependencies: Option<Vec<(String, String)>>
 }
 
-impl Database {
-    pub fn new (name: String, build_system: BuildSystem) -> Database {
-        Database{name, build_system, dependencies: None}
+impl Package {
+    pub fn new (name: String, build_system: BuildSystem) -> Package {
+        Package {name, build_system, dependencies: None}
     }
 }

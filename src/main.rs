@@ -1,4 +1,4 @@
-use plecakpkg::{handle_init, handle_install, Cli, Commands};
+use plecakpkg::{handle_init, handle_install, Cli, Commands, GitFetcher};
 use clap::Parser;
 fn main() -> Result<(), String>{
     let cli = Cli::parse();
@@ -7,7 +7,7 @@ fn main() -> Result<(), String>{
             handle_init(&args)
         }
         Some(Commands::Install(args)) =>{
-            handle_install(&args)
+            handle_install::<GitFetcher>(&args)
         }
         None =>{
             println!("No command given!");
